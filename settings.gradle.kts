@@ -15,4 +15,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "CryptoMe"
 include(":app")
- 
+include(":core")
+include(":data")
+include(":domain")
+include(":presentation")
