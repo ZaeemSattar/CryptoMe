@@ -1,39 +1,26 @@
-import java.util.Properties
-
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
-    id("com.google.dagger.hilt.android")
 }
 
 android {
-    namespace = "com.codewithzaeem.cryptome"
-    compileSdk = 33
+    namespace = "com.codewithzaeem.ui"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.codewithzaeem.cryptome"
         minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
-        }
-        debug {
-            buildConfigField("String", "COIN_CAP_IO_API_KEY", getApiKey())
-
         }
     }
     compileOptions {
@@ -64,22 +51,21 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.7.2")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    implementation(project(":ui"))
+    implementation("androidx.navigation:navigation-compose:2.6.0")
+
+
     implementation(project(":core"))
-
-
-}
-
-fun getApiKey(): String {
-
-    val properties = Properties().apply {
-        load(rootProject.file("build.properties").reader())
-    }
-    val key = properties["COIN_CAP_IO_API_KEY"]
-    return key.toString()
-
+    implementation(project(":data"))
+    implementation(project(":domain"))
 }
