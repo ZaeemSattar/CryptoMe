@@ -1,4 +1,4 @@
-package com.codewithzaeem.ui.components
+package com.codewithzaeem.ui.component
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api

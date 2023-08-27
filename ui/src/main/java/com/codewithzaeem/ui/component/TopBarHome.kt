@@ -1,4 +1,4 @@
-package com.codewithzaeem.ui.components
+package com.codewithzaeem.ui.component
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite

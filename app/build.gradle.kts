@@ -69,6 +69,8 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.44")
 
     implementation(project(":ui"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
     implementation(project(":core"))
 
 

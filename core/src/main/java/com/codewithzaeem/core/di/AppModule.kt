@@ -16,7 +16,7 @@ import javax.inject.Singleton
 object AppModule {
 
     @Provides
-    fun providesUrl() = "https://jsonplaceholder.typicode.com/"
+    fun providesUrl() = "https://api.coincap.io/v2/"
 
     @Provides
     @Singleton

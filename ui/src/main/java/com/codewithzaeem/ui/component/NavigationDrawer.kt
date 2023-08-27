@@ -1,4 +1,4 @@
-package com.codewithzaeem.ui.components
+package com.codewithzaeem.ui.component
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

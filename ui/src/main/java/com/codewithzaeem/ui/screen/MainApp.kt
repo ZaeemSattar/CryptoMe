@@ -1,10 +1,10 @@
-package com.codewithzaeem.ui.screens
+package com.codewithzaeem.ui.screen
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.codewithzaeem.ui.components.NavigationDrawer
+import com.codewithzaeem.ui.component.NavigationDrawer
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

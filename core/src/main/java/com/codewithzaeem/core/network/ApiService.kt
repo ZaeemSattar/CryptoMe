@@ -1,10 +1,10 @@
 package com.codewithzaeem.core.network
 
-import com.codewithzaeem.core.model.Post
+import com.codewithzaeem.core.entity.AssetResponse
 import retrofit2.http.GET
 
 interface ApiService {
 
-    @GET("posts")
-    suspend fun getPost():List<Post>
+    @GET("assets")
+    suspend fun getAssets(): AssetResponse
 }
